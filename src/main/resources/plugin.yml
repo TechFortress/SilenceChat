@@ -1,0 +1,6 @@
+name: DisableChat
+author: RoboMWM
+version: ${project.version}
+main: me.robomwm.DisableChat.DisableChat
+commands:
+    chat: {}
