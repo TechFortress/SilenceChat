@@ -40,7 +40,7 @@ public class DisableChat extends JavaPlugin implements Listener
         Player player = (Player)sender;
         if (cmd.getName().equalsIgnoreCase("chat"))
         {
-            //If option is explicitely stated, respect that choice
+            //If option is explicitly stated, respect that choice
             if (args.length > 0)
             {
                 switch (args[0].toLowerCase())
