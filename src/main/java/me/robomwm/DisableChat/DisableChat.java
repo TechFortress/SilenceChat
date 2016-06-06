@@ -25,7 +25,7 @@ public class DisableChat extends JavaPlugin implements Listener
 {
     Set<Player> chatDisabled = newSetFromMap(new ConcurrentHashMap<>());
     String disabledMessage = "Global chat has been " + ChatColor.RED + "disabled.";
-    String enabledMessage = "Global chat has been" + ChatColor.GREEN + "enabled.";
+    String enabledMessage = "Global chat has been " + ChatColor.GREEN + "enabled.";
 
     public void onEnable()
     {
