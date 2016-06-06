@@ -60,9 +60,9 @@ public class DisableChat extends JavaPlugin implements Listener
 
             //Otherwise, toggle
             if (chatDisabled.contains(player))
-                disableChat(player);
-            else
                 enableChat(player);
+            else
+                disableChat(player);
             return true;
         }
         return false; //shouldn't ever get here
