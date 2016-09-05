@@ -14,7 +14,7 @@
     <repositories>
         <repository>
             <id>destroystokyo-repo</id>
-            <url>https://repo.destroystokyo.com/content/groups/public/</url>
+            <url>https://repo.destroystokyo.com/repository/maven-public/</url>
         </repository>
     </repositories>
     <build>
@@ -33,7 +33,7 @@
         <dependency>
             <groupId>com.destroystokyo.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.9.2-R0.1-SNAPSHOT</version>
+            <version>1.10.2-R0.1-SNAPSHOT</version>
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
