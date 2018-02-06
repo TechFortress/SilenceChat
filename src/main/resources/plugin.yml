@@ -3,4 +3,5 @@ author: RoboMWM
 version: ${project.version}
 main: me.robomwm.DisableChat.DisableChat
 commands:
-    chat: {}
+    gchat:
+        aliases: [disablechat, enablechat, ignoreall, chat, chatoff, chaton, globalchat, global]

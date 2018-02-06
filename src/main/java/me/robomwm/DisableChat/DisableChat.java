@@ -38,7 +38,7 @@ public class DisableChat extends JavaPlugin implements Listener
             return false;
 
         Player player = (Player)sender;
-        if (cmd.getName().equalsIgnoreCase("chat"))
+        if (cmd.getName().equalsIgnoreCase("gchat"))
         {
             //If option is explicitly stated, respect that choice
             if (args.length > 0)
