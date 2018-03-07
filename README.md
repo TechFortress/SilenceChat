@@ -1,4 +1,4 @@
-# DisableChat
+# SilenceChat
 A Bukkit plugin that allows you to mute global chat, while still able to receive chat in other mediums such as private or group messages
 
 ### Command:
