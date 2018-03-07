@@ -1,4 +1,4 @@
-package me.robomwm.DisableChat;
+package me.robomwm.silencechat;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -21,10 +21,10 @@ import static java.util.Collections.newSetFromMap;
 /**
  * Created by robom on 5/21/2016.
  */
-public class DisableChat extends JavaPlugin implements Listener
+public class SilenceChat extends JavaPlugin implements Listener
 {
     Set<Player> chatDisabled = newSetFromMap(new ConcurrentHashMap<>());
-    String disabledMessage = "Global chat has been " + ChatColor.RED + "disabled.";
+    String disabledMessage = "Global chat has been " + ChatColor.RED + "silenced.";
     String enabledMessage = "Global chat has been " + ChatColor.GREEN + "enabled.";
 
     public void onEnable()
@@ -38,7 +38,7 @@ public class DisableChat extends JavaPlugin implements Listener
             return false;
 
         Player player = (Player)sender;
-        if (cmd.getName().equalsIgnoreCase("gchat"))
+        if (cmd.getName().equalsIgnoreCase("silence"))
         {
             //If option is explicitly stated, respect that choice
             if (args.length > 0)
@@ -48,12 +48,12 @@ public class DisableChat extends JavaPlugin implements Listener
                     case "disable":
                     case "off":
                     case "false":
-                        disableChat(player);
+                        enableChat(player);
                         return true;
                     case "enable":
                     case "on":
                     case "true":
-                        enableChat(player);
+                        disableChat(player);
                         return true;
                 }
             }
@@ -92,7 +92,7 @@ public class DisableChat extends JavaPlugin implements Listener
         //Don't allow players that have disabled chat to send chat (globally)
         if (chatDisabled.contains(event.getPlayer()))
         {
-            event.getPlayer().sendMessage(ChatColor.RED + "You have disabled global chat. Use " + ChatColor.GOLD + "/chat " + ChatColor.RED + "to re-enable.");
+            event.getPlayer().sendMessage(ChatColor.RED + "You have silenced global chat. Use " + ChatColor.GOLD + "/silence " + ChatColor.RED + "to re-enable.");
             event.setCancelled(true);
             return;
         }
@@ -101,8 +101,6 @@ public class DisableChat extends JavaPlugin implements Listener
         Set<Player> recipients = event.getRecipients();
         for (Player target : chatDisabled)
             recipients.remove(target);
-
-        /*chatDisabled.forEach(recipients::remove); //woah wutz dis*/
     }
 
     /**
@@ -125,7 +123,7 @@ public class DisableChat extends JavaPlugin implements Listener
         //Don't allow players that have disabled chat to send action messages
         if (chatDisabled.contains(player))
         {
-            event.getPlayer().sendMessage(ChatColor.RED + "You have disabled global chat. Use " + ChatColor.GOLD + "/chat " + ChatColor.RED + "to re-enable.");
+            event.getPlayer().sendMessage(ChatColor.RED + "You have silenced global chat. Use " + ChatColor.GOLD + "/silence " + ChatColor.RED + "to re-enable.");
             event.setCancelled(true);
             return;
         }

@@ -1,7 +1,7 @@
-name: DisableChat
+name: SilenceChat
 author: RoboMWM
 version: ${project.version}
-main: me.robomwm.DisableChat.DisableChat
+main: com.robomwm.silencechat.SilenceChat
 commands:
-    gchat:
-        aliases: [disablechat, enablechat, ignoreall, chat, chatoff, chaton, globalchat, global]
+    silence:
+        aliases: [unsilence, disablechat, enablechat, ignoreall, chat, chatoff, chaton, globalchat, gchat, global]
